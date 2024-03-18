@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark</title>
+    <link rel="shortcut icon" href="Assets/img/bookmark.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="Assets/css/main.css">
+</head>
+<body>
+    <!-- ========== Header ========== -->
+    <header>
+        <div class="contianer my-5">
+            <h1 class="font-main fs-50px text-darkish w-fit py-2 mb-2 mx-auto">Bookmarker</h1>
+        </div>
+    </header>
+    <main>
+        <!-- ========== Add URL Section ========== -->
+        <section id="addURL">
+            <div class="container py-4 px-3 mt-5 border-top border-bottom border-dotted border-dark border-opacity-75">
+                <h2 class="font-sub-1 fs-25px text-center mb-2 w-fit mx-auto">
+                    <i class="fa-solid fa-bookmark"></i>
+                    <span>Bookmark your favorite sites</span>
+                    <i class="fa-solid fa-bookmark"></i>
+                </h2>
+                <div class="container d-flex flex-column px-0 mt-4 gap-4">
+                    <div class="form-group">
+                        <label for="siteName" class="fw-semibold pb-2"><i class="fa-solid fa-book-bookmark pe-2"></i>Site Name</label>
+                        <input class="form-control" type="text" name="siteName" id="siteName"
+                            placeholder="Bookmark Name"
+                            minlength="3" data-id="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="siteURL" class="fw-semibold pb-2"><i class="fa-solid fa-link pe-2"></i>Site URL</label>
+                        <input class="form-control" type="url" name="siteURL" id="siteURL"
+                            placeholder="Website URL" data-id="1" required>
+                    </div>
+                    <button id="addBtn" onclick="addSite();" class="btn btn-submit px-5 mx-auto">Submit</button>
+                </div>
+            </div>
+        </section>
+        <!-- ========== Show URL Section ========== -->
+        <section id="showURL">
+            <div class="container my-5">
+                <div class="input-group mb-5 w-sm-50">
+                    <div class="input-group-prepend">
+                        <button oninput="searchFromSitesList();" class="btn btn-submit rounded-0 rounded-start" type="button"><i class="fa fa-search"></i></button>
+                    </div>
+                    <input oninput="searchFromSitesList();" class="form-control noValidate" type="text" name="searchName" id="searchName" placeholder="Search by Name . . .">
+                </div>
+                <table class="table text-center align-middle">
+                    <thead>
+                        <tr>
+                            <th scope="col">Index</th>
+                            <th scope="col">Website Name</th>
+                            <th scope="col">Visit</th>
+                            <th scope="col">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="allSitesBody">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <!-- ========== Show invalid data modal ========== -->
+        <div class="modal" id="errorMsgModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content p-4">
+                    <div class="modal-header p-0 mb-4">
+                        <h5 class="modal-title">
+                            <span class="bg-danger bg-opacity-75 rounded-circle me-1"></span>
+                            <span class="bg-warning bg-opacity-75 rounded-circle me-1"></span>
+                            <span class="bg-success bg-opacity-75 rounded-circle"></span>
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <p class="font-sub-2 fs-5 pb-2">Site Name or Url is not valid, Please follow the rules below :</p>
+                        <ul class="list-unstyled fs-18px">
+                            <li class="pt-10px"><i class="fa-regular fa-circle-right p-2 text-danger text-opacity-75"></i>Site name must contain at least 3 characters</li>
+                            <li class="pt-10px"><i class="fa-regular fa-circle-right p-2 text-danger text-opacity-75"></i>Site URL must be a valid one</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type = "text/javascript" src="Assets/js/bootstrap.bundle.min.js"></script>
+    <script type = "text/javascript" src="Assets/js/main.js"></script>
+</body>
+</html>

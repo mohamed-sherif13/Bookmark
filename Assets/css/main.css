@@ -1,0 +1,168 @@
+/* Font Awesome Library Icon stylesheet */
+@import url(all.min.css);
+/* Bootstrap stylesheet */
+@import url(bootstrap.min.css);
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
+/* ========== General Styles ========== */
+:root {
+    /* colors */
+    --color-general: #212529; 
+    --text-darkish: #352e28;
+    --text-bg-select: #FEC260;
+    --bg-orange-light: #F7ECDE;
+    --color-orange: 209, 81, 45;
+    --color-update: #0d6efd;
+
+    /* opacity */
+    --opacity-25: 0.25;
+
+    /* Fonts */
+    --font-main: "Pacifico", cursive;
+    --font-sub-1: "Righteous", sans-serif;
+    --font-sub-2: "Bree Serif", serif;
+    --font-general: "PT Sans Caption", sans-serif;
+    --bs-body-line-height: 1.2;
+
+    /* Animation options */
+    --animation-duration: 0.35s; 
+}
+
+::selection {background: var(--text-bg-select);}
+body {
+    background-color: var(--bg-orange-light);
+    font-family: var(--font-general);
+    color: var(--color-general);
+    position: relative;
+}
+h1, h2, h3, h4, h5, h6, p {
+    margin-bottom: 0;
+    word-break: break-word;
+    text-wrap: wrap;
+}
+.form-control {
+    --bs-border-width: 1px;
+
+    padding: 6px 12px;
+    line-height: 1.5px;
+}
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #d99c39;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem #fec26055;
+}
+/* .btn {
+    width: 90%;
+    text-align: center;
+} */
+
+.bg-orange {background-color: rgba(var(--color-orange), var(--opacity-25));}
+
+.text-darkish {color: var(--text-darkish);}
+.text-orange {color: rgb(var(--color-orange));}
+
+.font-main {font-family: var(--font-main);}
+.font-sub-1 {font-family: var(--font-sub-1);}
+.font-sub-2 {font-family: var(--font-sub-2);}
+.font-general {font-family: var(--font-general);}
+
+.fs-18px {font-size: 18px;}
+.fs-25px {font-size: 25px;}
+.fs-50px {font-size: 50px;}
+
+.w-fit {
+    width: fit-content;
+}
+
+.pt-10px {padding-top: 10px;}
+
+.btn-submit {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #d1512d;
+    --bs-btn-border-color: #d1512d;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #bb4120;
+    --bs-btn-hover-border-color: #a03315;
+}
+.btn-visit {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #9eb23b;
+    --bs-btn-border-color: #9eb23b;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #8a9e23;
+    --bs-btn-hover-border-color: #6e8018;
+}
+.btn-delete {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #eb1d36;
+    --bs-btn-border-color: #eb1d36;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #d30820;
+    --bs-btn-hover-border-color: #ba081d;
+}
+/* ========== Header ========== */
+header h1 {position: relative;}
+header h1::before {
+    content: '';
+    position: absolute;
+    background-color: var(--text-bg-select);
+    width: 100%;
+    height: 25%;
+    bottom: 10px;
+    z-index: -1;
+    transition: var(--animation-duration);
+}
+header h1:hover::before {height: 50%;}
+
+/* ========== Add URL Section ========== */
+#addURL .container.border-top,
+#addURL .container.border-bottom {
+    --bs-border-style: dotted;
+    --bs-border-width: 2px;
+}
+#addURL h2 {
+    background-image: linear-gradient(to right, rgb(60, 165, 92), rgb(181, 172, 73));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ========== Show URL Section ========== */
+#showURL tbody div.text-black-50:has(>i.fa-edit) {transition: var(--animation-duration);}
+#showURL tbody div.text-black-50:has(>i.fa-edit):hover {color: var(--color-update) !important;}
+
+/* ========== Show invalid data modal ========== */
+.modal .modal-header {border-bottom: none;}
+.modal .modal-title>span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+
+
+
+/* ========== Media Query ========== */
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .w-sm-50 {width: 50%;}
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+
+}
+
+/* Large devices (Screens, 992px and up) */
+@media (min-width: 992px) { 
+
+}
